@@ -3,10 +3,13 @@ import csv
 import requests
 import json
 from collections import OrderedDict
+import os
 
 # Config reader
+dir = os.path.dirname(__file__)
+filename = os.path.join(dir, 'config.ini')
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(filename)
 
 # API Key
 apiKey = config['DEFAULT']['api_key']
