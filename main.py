@@ -16,7 +16,8 @@ apiKey = config['DEFAULT']['api_key']
 
 convertIDs = {}
 convertNames = {}
-with open("countries.csv", "r", encoding="latin-1") as f:
+countries_filename = os.path.join(dir, 'countries.csv')
+with open(countries_filename, "r", encoding="latin-1") as f:
     for row in csv.reader(f, delimiter=',', skipinitialspace=True):
         convertIDs[row[0]] = row[2]
         convertNames[row[0]] = row[1]
